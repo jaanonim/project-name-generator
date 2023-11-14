@@ -54,11 +54,14 @@
 </div>
 
 <div class="content">
-    <DataTable table$aria-label="Translations" style="width: max(60ch, 70%);">
+    <DataTable
+        table$aria-label="Translations"
+        style="width: calc(100% - 2rem);"
+    >
         <Head>
             <Row>
-                <Cell width="50%">Language</Cell>
                 <Cell width="50%">Result</Cell>
+                <Cell width="50%">Language</Cell>
             </Row>
         </Head>
         <Body>
@@ -74,8 +77,10 @@
                         navigator.clipboard.writeText(key);
                     }}
                 >
-                    <Cell style="max-width: 25ch;">{crop(result[key], 5)}</Cell>
-                    <Cell>{key}</Cell>
+                    <Cell width="50%" style="max-width: 50%">{key}</Cell>
+                    <Cell width="50%" style="max-width: 50%"
+                        >{crop(result[key], 5)}</Cell
+                    >
                 </Row>
             {/each}
         </Body>
@@ -93,18 +98,25 @@
 </Snackbar>
 
 <style>
+    :global(body) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .input {
-        margin: auto;
-        margin-top: 2rem;
+        width: calc(100% - 4rem);
+        margin: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        width: max(calc(60ch - 2rem), 70%);
     }
 
     .content {
-        margin: 1rem;
+        margin: 2rem;
+        width: calc(100% - 4rem);
+        text-wrap: wrap;
         display: flex;
         align-items: center;
         justify-content: center;
