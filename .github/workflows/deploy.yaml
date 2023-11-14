@@ -6,6 +6,9 @@ on:
 
     workflow_dispatch:
 
+env:
+    BASE_URL: /project-name-generator/
+
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
     contents: read
