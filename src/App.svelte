@@ -54,7 +54,7 @@
 </div>
 
 <div class="content">
-    <DataTable table$aria-label="Translations" style="width: 70%">
+    <DataTable table$aria-label="Translations" style="width: max(60ch, 70%);">
         <Head>
             <Row>
                 <Cell width="50%">Language</Cell>
@@ -74,7 +74,7 @@
                         navigator.clipboard.writeText(key);
                     }}
                 >
-                    <Cell>{crop(result[key], 5)}</Cell>
+                    <Cell style="max-width: 25ch;">{crop(result[key], 5)}</Cell>
                     <Cell>{key}</Cell>
                 </Row>
             {/each}
@@ -94,9 +94,13 @@
 
 <style>
     .input {
+        margin: auto;
+        margin-top: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
+        width: max(calc(60ch - 2rem), 70%);
     }
 
     .content {
